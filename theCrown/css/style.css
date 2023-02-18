@@ -1,0 +1,604 @@
+:root{
+    --trailor-box-width: 50vw;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #000;
+    color : #fff;
+    font-family: sans-serif;
+}
+
+section{
+    height: 100vh;
+    overflow: hidden;
+
+    position: relative;
+
+    /* border-bottom: 2px solid #f4f4f4; */
+}
+
+section::before{
+    content: "";
+    background-color: #f4f4f4;
+    width: 80%;
+    height: 1px;
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+/* nav */
+
+nav{
+    height: 100px;
+    
+}
+
+.nav-list{
+    height: 100%;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+
+}
+
+.nav-list-item{
+    width: 100%;
+    height: 100%;
+
+    font-size: 1.3rem;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    
+    cursor: pointer;
+}
+
+.nav-list-item::before{
+    content: "";
+
+    width: 50%;
+    height: 100%;
+
+    border-bottom: 5px solid white;
+
+    position: absolute;
+
+    transform: scaleX(0);
+    /* transform-origin: left; */
+
+    transition: all 0.3s;
+}
+
+.nav-list-item a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-list-item:hover::before{
+
+    transform: scaleX(1);
+}
+
+/* nav */
+
+/* banner */
+
+.banner{
+
+    background-image: url("./../lib/thecrown2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+}
+
+.banner-text{
+    background-color: rgba(255,255,255,0.5);
+    max-width: 800px;
+    max-height: 400px;
+
+    font-size: 2rem;
+    text-align: justify;
+
+    padding: 20px;
+
+    position: absolute;
+    right: 10%;
+    bottom: 20%;
+}
+
+.banner-text button{
+    display: block;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.2rem;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 15px;
+    cursor: pointer;
+
+    position: relative;
+
+    overflow: hidden;
+
+    z-index: 5;
+
+    transition: all 0.5s;
+
+}
+
+.banner-text button::before{
+
+    content:"";
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    transform: translateY(100%);
+
+    z-index: -1;
+
+    transition: all 0.5s;
+}
+
+.banner-text button:hover{
+
+    color: #000;
+}
+
+.banner-text button:hover::before{
+
+    transform: translateY(0);
+
+}
+
+/* banner */
+
+/* storyLine */
+
+.section-story{
+
+    padding: 5% 10%;
+}
+
+.section-story h3{
+    height: 10%;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.section-story p{
+    height: 90%;
+    font-size: 2rem;
+    text-align: justify;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+/* storyLine */
+
+/* cast */
+/* .section-cast .btn{
+
+    background-color: transparent;
+    color: #fff;
+    
+    font-size: 5rem;
+    border: 2px outset #fff;
+    padding: 10px;
+
+    position: absolute;
+    top: 60%;
+    transform: translateY(-60%);
+
+    cursor: pointer;
+
+    z-index: 10;
+} */
+
+
+/* .section-cast .btn-next{
+    right: 5%;
+    transform: translateX(10%,-50%);
+}
+
+.section-cast .btn-prev{
+    left: 5%;
+    transform: translateX(10%,-50%);
+} */
+
+
+/* cast */
+
+.section-cast{
+
+    height: 50vh;
+    padding: 0 10%;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    /* overflow: visible; */
+
+}
+
+.section-cast h3{
+    text-align: center;
+    font-size: 3rem;
+    /* padding-top: 10px; */
+
+    margin: 50px 0;
+}
+
+.cast-limit{
+
+    height: 20vh;
+
+    position: relative;
+}
+
+
+.cast-container{
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    overflow-y: hidden;
+
+}
+
+.section-cast .card-box{
+    width: 100%;
+    height: fit-content;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.section-cast .card-box .card{
+    width: 25%;
+    height: 200px;
+    margin-bottom: 20px;
+    padding: 5px;
+    column-count: 5;
+    column-width: 5px;
+    column-rule: 2px solid red;
+
+
+    display : flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+}
+
+.section-cast .card-box .card .img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+    position: relative;
+
+    z-index: 5;
+
+    transition: all 0.5s;
+}
+
+.section-cast .card-box .card img{
+    width: 100%;
+    height: 100%;
+}
+
+.section-cast .card-box .card .cast-info{
+
+    color : #fff;
+    padding: 10px;
+}
+
+.section-cast .card-box .card .cast-info h5{
+    font-size: 1rem;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+}
+
+.section-cast .card-box .card .cast-info h5 small{
+    font-weight: 100;
+    text-transform: capitalize;
+}
+
+.section-cast .btn-more{
+
+
+
+    font-size: 3rem;
+    color: #fff;
+    border: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%);
+
+    animation: button-down 1s ease-in-out infinite ;
+
+    cursor: pointer;;
+}
+
+
+/* cast */
+
+/* trailors */
+
+.section-trailor{
+    /* width: 100vw; */
+    height: 80vh;
+
+    padding: 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.section-trailor h3{
+
+    text-align: center;
+    font-size: 3rem;
+}
+
+.trailor-box{
+    width: var(--trailor-box-width);
+    height: 70%;
+    border-radius: 10px;
+
+    position: relative;
+
+}
+
+.limit-box{
+
+   width: 100%;
+   height: 100%; 
+   overflow: hidden;
+}
+
+.trailors{
+    width: calc( var(--trailor-box-width) * 5 );
+    height: 100%;
+    display: flex;
+
+    transition: all 1s;
+}
+
+
+
+.trailors iframe{
+    width: var(--trailor-box-width);
+    height: 100%;
+}
+
+.trailor-box .btn{
+
+    color: #fff;
+    font-size: 5rem;
+    border: 1px outset #fff;
+    padding: 0 10px;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    cursor: pointer;
+}
+
+.btn{
+    background-color: transparent;
+    transition: all 0.3s;
+}
+
+.trailor-box ~ .btn:hover{
+
+    background-color: rgba(255,255,255,0.5); 
+}
+
+.trailor-box .btn:active{
+    transform: translateY(-50%) scale(0.8);
+}
+
+.trailor-box .btn-next{
+    left: 100%;
+}
+
+.trailor-box .btn-prev{
+    right: 100%;
+}
+
+/* trailors */
+
+.btn-next:hover,
+.btn-prev:hover{
+
+    background-color: rgba(255,255,255,0.5); 
+}
+
+.trailor-box .btn:active{
+    transform: translateY(-50%) scale(0.8);
+}
+
+.trailor-box .btn-next{
+    left: 100%;
+}
+
+.trailor-box .btn-prev{
+    right: 100%;
+}
+
+/* trailors */
+
+
+@keyframes button-down {
+
+    from{
+        transform: translate(-50%,0);
+    }
+
+    to{
+        transform: translate(-50%,20px);
+    }
+}
+
+.section-watch{
+
+    /* background-color: cyan; */
+    width: 60vw;
+    height: 60vh;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    margin: auto;
+    padding: 50px 30px;
+}
+
+.section-watch .watch-img{
+
+    /* background-color: red; */
+    width: 35%;
+    height: 100%;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.section-watch .watch-img img{
+
+    width: 100%;
+    height: 100%;
+
+
+}
+
+.section-watch .watch-info{
+    
+    width: 60%;
+    height: 100%;
+}
+
+.section-watch .watch-info .heading{
+
+    /* background-color: cyan; */
+    font-size: 2rem;
+    font-family: monospace;
+    margin-bottom: 20px;
+}
+
+.section-watch .watch-info .rating{
+
+    /* background-color: red; */
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-watch .watch-info .rating > * > *{
+    margin-bottom: 10px;
+}
+
+.section-watch .watch-info .rating h4{
+
+    color: grey;
+    font-size: 20px;
+}
+
+.section-watch .watch-info .rating strong{
+
+    font-size: 25px;
+}
+
+.section-watch .watch-info .information{
+/* 
+    background-color: blue; */
+    width: 100%;
+
+    margin-bottom: 20px;
+}
+
+.section-watch .watch-info .information .information-list{
+    list-style: square;
+    list-style-position:inside;
+    font-size: 18px;
+}
+
+.section-watch .watch-info .information .information-list table{
+    width: 100%;
+}
+
+.section-watch .watch-info .information .information-list table td{
+    height: 30px;
+}
+
+.section-watch .watch-info .information .information-list table td:first-of-type{
+
+    color: grey;
+}
+
+.section-watch .watch-btn .btn-watch{
+
+    /* background-color: red; */
+    color: #fff;
+    font-size: 25px;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+
+}
+
+.section-watch .watch-btn .btn-watch a{
+
+    text-decoration: none;
+}
+
+.section-watch .watch-btn .btn-watch strong{
+
+    display: inline-block;
+    color : red;
+
+    transition: all 0.5s;
+}
+
+.section-watch .watch-btn .btn-watch:hover strong{
+
+    transform: translateY(-5px);
+}
+
